@@ -20,6 +20,8 @@ import java.util.List;
  */
 public class GAdapter extends BaseAdapter {
 
+    String TAG = "GAdapter";
+
     Context context;
     List<String> list;
 
@@ -45,9 +47,13 @@ public class GAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
         TextView tv = (TextView) view.findViewById(R.id.item_tv);
         tv.setText(list.get(position));
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.height = parent.getHeight() / 3;
+        view.setLayoutParams(params);
         return view;
     }
 }

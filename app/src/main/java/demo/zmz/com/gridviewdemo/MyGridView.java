@@ -17,6 +17,8 @@ import android.widget.GridView;
  */
 public class MyGridView extends GridView implements AbsListView.OnScrollListener {
 
+    String TAG = "MyGridView";
+
     public MyGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setOnScrollListener(this);
